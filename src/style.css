@@ -270,6 +270,7 @@ main {
 /***** Extra Section *****/
 .section-extra-product {
   background-color: rgb(242, 242, 242);
+  margin-bottom: 15rem;
 
   & .grid-three--cols {
     gap: 2rem;
@@ -282,7 +283,9 @@ main {
   position: relative;
   /* box-shadow: inset 0 0 0 4rem #000; */
   /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */
-
+  & .extra-text {
+    z-index: 99;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -318,6 +321,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
     z-index: 2;
 
     & img {
@@ -364,7 +368,7 @@ main {
 }
 
 /***** End Extra Div Section *****/
-@media (width >= 998px) {
+@media (width >= 767px) {
   /***** navbar Section *****/
   .nav__icon,
   .cart {
@@ -392,26 +396,25 @@ main {
 
   .navbar-brand {
     img {
-      width: 20rem;
+      width: 15rem;
     }
   }
   .section-navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.8rem 2.4rem;
+    padding: 1.5rem 2.4rem;
   }
   .section-navbar .navbar ul {
     display: flex;
     align-items: center;
-    gap: 3.2rem;
-    /* text-transform: capitalize; */
+    gap: 2.2rem;
 
     & li a {
       color: var(--heading-color);
       text-transform: uppercase;
       font-weight: 600;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       display: inline-block;
       position: relative;
 
@@ -997,7 +1000,7 @@ footer .footer-1-div .fa-brands:hover {
   }
 } */
 
-@media (width <= 1100px) {
+/* @media (width <= 1100px) {
   html {
     font-size: 52.5%;
   }
@@ -1032,11 +1035,74 @@ footer .footer-1-div .fa-brands:hover {
       }
     }
   }
-}
+} */
 
 @media (width <= 998px) {
   html {
     font-size: 52%;
+  }
+  .navbar-brand {
+    img {
+      width: 10rem;
+    }
+  }
+  .section-hero {
+    height: auto;
+    padding: 5rem 1rem;
+    padding-bottom: 15rem;
+
+    & .grid-two--cols {
+      grid-template-columns: 1fr;
+
+      & .section-hero--content {
+        order: 2;
+      }
+
+      & .section-hero--image {
+        order: 1;
+        text-align: center;
+
+        & img {
+          width: 65%;
+        }
+      }
+    }
+  }
+
+  .section-extra-product {
+    & .grid {
+      gap: 3.2rem;
+    }
+    & .grid-two--cols {
+      grid-template-columns: 1fr;
+
+      & .extra-text {
+        order: 2;
+      }
+
+      & .extra-img {
+        order: 1;
+        text-align: center;
+
+        & img {
+          width: 65%;
+        }
+      }
+    }
+  }
+}
+@media (width <= 767px) {
+  html {
+    font-size: 48%;
+  }
+  .navbar-brand {
+    img {
+      width: 25rem;
+    }
+  }
+  .grid-two--cols,
+  .grid-three--cols {
+    grid-template-columns: 1fr;
   }
 
   /***** bottom navBar Section *****/
@@ -1120,8 +1186,8 @@ footer .footer-1-div .fa-brands:hover {
   }
   .sign_in_up {
     position: absolute;
-    top: 5.4rem;
-    right: 4rem;
+    top: 10rem;
+    right: 5rem;
   }
   .sign-up {
     display: none;
@@ -1132,38 +1198,8 @@ footer .footer-1-div .fa-brands:hover {
     & .navbar ul {
       gap: 2.4rem;
     }
-
-    & .navbar-brand {
-      img {
-        width: 35%;
-      }
-      margin-bottom: 2.4rem;
-    }
   }
   /***** End bottom navBar Section *****/
-
-  .section-hero {
-    height: auto;
-    padding: 5rem 1rem;
-    padding-bottom: 15rem;
-
-    & .grid-two--cols {
-      grid-template-columns: 1fr;
-
-      & .section-hero--content {
-        order: 2;
-      }
-
-      & .section-hero--image {
-        order: 1;
-        text-align: center;
-
-        & img {
-          width: 65%;
-        }
-      }
-    }
-  }
 
   .section-about .about-div {
     text-align: left;
@@ -1180,46 +1216,6 @@ footer .footer-1-div .fa-brands:hover {
     }
   }
 }
-
-@media (width <= 767px) {
-  .grid-two--cols,
-  .grid-three--cols {
-    grid-template-columns: 1fr;
-  }
-
-  .section-hero .grid {
-    & .hero-heading {
-      font-size: 3.8rem;
-    }
-  }
-
-  .section-why--choose {
-    & img {
-      width: 30%;
-    }
-
-    & .grid {
-      gap: 1.4rem;
-    }
-
-    & .text-align--right .why-choose--div {
-      align-items: start;
-      text-align: left;
-    }
-  }
-
-  .section-contact--homepage .btn {
-    display: block;
-    text-align: center;
-  }
-
-  .contact-title {
-    font-size: 2.4rem;
-  }
-  :is(.section-contact--homepage) .container:first-child {
-    padding: 6.4rem 0rem 2.4rem 0rem;
-  }
-}
 /* For medium devices */
 @media (width >= 520px) {
   .nav__list {
@@ -1228,6 +1224,14 @@ footer .footer-1-div .fa-brands:hover {
   }
 }
 @media (width <= 520px) {
+  .navbar-brand {
+    img {
+      width: 15rem;
+    }
+  }
+  .sign_in_up {
+    top: 8rem;
+  }
   .top_text .head_txt p {
     font-size: 1rem;
   }
@@ -1241,6 +1245,20 @@ footer .footer-1-div .fa-brands:hover {
     & .hero-para {
       font-size: 1.4rem;
     }
+  }
+}
+
+@media (width <= 320px) {
+  html {
+    font-size: 42%;
+  }
+  .navbar-brand {
+    img {
+      width: 10rem;
+    }
+  }
+  .sign_in_up {
+    top: 6.3rem;
   }
 }
 
