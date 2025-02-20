@@ -92,7 +92,7 @@ section {
 }
 
 .container {
-  /* max-width: 102rem; */
+  max-width: 144rem;
   margin: 0 auto;
   padding: 3.6rem 2.4rem;
 }
@@ -210,9 +210,17 @@ section {
 @keyframes scrolling {
   0% {
     transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
   }
   100% {
     transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
   }
 }
 
